@@ -12,10 +12,10 @@ my ( $out, $err, $res ) = capture {
     system( $^X, @includes, "-It/lib", "-d:Caller", "t/bin/example.pl" );
 };
 
-unlike $out, qr/main::meep/, "main::meep is skipped";
-unlike $out, qr/Marp::meep/, "Marp::meep is skipped";
-unlike $out, qr/Moop::meep/, "Moop::meep is skipped";
-like $out, qr/main::marp/, "main::marp is not skipped";
+unlike $out, qr/main::skip/, "main::skip is skipped";
+unlike $out, qr/Marp::skip/, "Marp::skip is skipped";
+unlike $out, qr/Moop::skip/, "Moop::skip is skipped";
+like $out, qr/main::debug/, "main::debug is not skipped";
 is $err, "", "no errors";
 is $res, undef, "script didn't crash";
 

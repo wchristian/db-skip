@@ -1,36 +1,34 @@
 use strict;
 use warnings;
 
-use DB::Skip pkgs => [ qw( Marp ), qr/^Mo/ ], subs => [qw( main::meep )];
+use DB::Skip pkgs => [ qw( Marp ), qr/^Mo/ ], subs => [qw( main::skip )];
 
-my $meep = meep();
+my $meep = skip();
 print $meep;
-$meep = Marp::meep();
+$meep = Marp::skip();
 print $meep;
-$meep = Moop::meep();
+$meep = Moop::skip();
 print $meep;
-$meep = Moop::meep();
-print $meep;
-$meep = marp();
+$meep = debug();
 print $meep;
 exit;
 
-sub meep {
+sub skip {
     return 1;
 }
 
-sub marp {
+sub debug {
     return 4;
 }
 
 package Marp;
 
-sub meep {
+sub skip {
     return 2;
 }
 
 package Moop;
 
-sub meep {
+sub skip {
     return 3;
 }
