@@ -3,7 +3,15 @@ package DB::Skip;
 use strict;
 use warnings;
 
-my $old_db;
+{
+    my $old_db;
+
+    sub old_db {
+        my ( $class, $ref ) = @_;
+        $old_db = $ref if $ref;
+        return $old_db;
+    }
+}
 
 sub import {
     my ( $class, %opts ) = @_;
@@ -16,7 +24,7 @@ sub import {
     my %pkg_skip = map { $_ => 1 } grep { !ref } @{ $opts{pkgs} };
     my %sub_skip = map { $_ => 1 } grep { !ref } @{ $opts{subs} };
 
-    $old_db ||= \&DB::DB;
+    $class->_old_db( \&DB::DB ) if !$class->old_db;
 
     my $new_DB = sub {
         my $lvl = 0;
@@ -38,7 +46,7 @@ sub import {
             return if $sub =~ $sub_re;
         }
 
-        goto &{$old_db};
+        goto &{ $class->_old_db };
     };
 
     {
@@ -48,4 +56,5 @@ sub import {
 
     return;
 }
+
 1;
