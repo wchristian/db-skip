@@ -1,5 +1,8 @@
 package DB::Skip;
 
+# ABSTRACT: make the perl debugger skip statements in given packages or subs
+# VERSION
+
 use strict;
 use warnings;
 
