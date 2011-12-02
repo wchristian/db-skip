@@ -117,7 +117,7 @@ sub import {
     my %pkg_skip = map { $_ => 1 } grep { !ref } @{ $opts{pkgs} };
     my %sub_skip = map { $_ => 1 } grep { !ref } @{ $opts{subs} };
 
-    $class->_old_db( \&DB::DB ) if !$class->old_db;
+    $class->old_db( \&DB::DB ) if !$class->old_db;
 
     my $new_DB = sub {
         my $lvl = 0;
@@ -139,7 +139,7 @@ sub import {
             return if $sub =~ $sub_re;
         }
 
-        goto &{ $class->_old_db };
+        goto &{ $class->old_db };
     };
 
     {
