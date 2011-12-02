@@ -30,5 +30,12 @@ sub skip {
 package Moop;
 
 sub skip {
+    Meep::debug();
     return 3;
+}
+
+package Meep;
+
+sub debug {
+    print 5;
 }

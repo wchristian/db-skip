@@ -15,7 +15,10 @@ my ( $out, $err, $res ) = capture {
 unlike $out, qr/main::skip/, "main::skip is skipped";
 unlike $out, qr/Marp::skip/, "Marp::skip is skipped";
 unlike $out, qr/Moop::skip/, "Moop::skip is skipped";
+like $out, qr/Meep::debug/, "Meep::debug is not skipped";
 like $out, qr/main::debug/, "main::debug is not skipped";
+my( @matches )= ($out =~ /(::)/g);
+is @matches, 2, "only 2 subs are unskipped";
 is $err, "", "no errors";
 is $res, undef, "script didn't crash";
 
