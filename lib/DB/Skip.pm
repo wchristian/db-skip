@@ -39,7 +39,7 @@ This can be somewhat frustrating if you're using modules like Moo that insert a
 lot of busywork functions that are necessary for execution, but obscure the
 actual flow in the debugger.
 
-Loading this module in your code will replace the debugger's main function with
+Loading this module in your code will augment the debugger's main function with
 one that silently ignores statements when their package or sub matches any of
 the given parameters.
 
