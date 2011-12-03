@@ -2,6 +2,10 @@ Revision history for Perl extension {{$dist->name}}
 
 {{$NEXT}}
 
+1.113370  2011-12-03 09:30:45 Europe/Berlin
+    - set minimum test dep of C::T to 0.13 to allow capturing of system return
+      value
+
 1.113362  2011-12-03 00:14:10 Europe/Berlin
     - documentation clarification
 

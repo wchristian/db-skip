@@ -4,7 +4,7 @@ DB::Skip - make the perl debugger skip statements in given packages or subs
 
 # VERSION
 
-version 1.113362
+version 1.113370
 
 # SYNOPSIS
 
