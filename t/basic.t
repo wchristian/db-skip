@@ -3,7 +3,7 @@ use warnings;
 
 use Test::InDistDir;
 
-use Capture::Tiny 'capture';
+use Capture::Tiny 0.13 'capture';
 
 use Test::More;
 
@@ -20,6 +20,6 @@ like $out, qr/main::debug/, "main::debug is not skipped";
 my( @matches )= ($out =~ /(::)/g);
 is @matches, 2, "only 2 subs are unskipped";
 is $err, "", "no errors";
-is $res, undef, "script didn't crash";
+is $res, 0, "script didn't crash";
 
 done_testing;
