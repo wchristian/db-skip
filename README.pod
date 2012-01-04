@@ -1,12 +1,12 @@
-# NAME
+=head1 NAME
 
 DB::Skip - make the perl debugger skip statements in given packages or subs
 
-# VERSION
+=head1 VERSION
 
-version 1.113370
+version 1.120040
 
-# SYNOPSIS
+=head1 SYNOPSIS
 
     use DB::Skip pkgs => [ qw( Marp ), qr/^Mo/ ], subs => [qw( main::skip )];
 
@@ -32,7 +32,7 @@ The Perl debugger will skip over all the functions named skip(), since they are
 excluded by the parameters passed to DB::Skip. However functions named debug()
 will be treated as normal.
 
-# DESCRIPTION
+=head1 DESCRIPTION
 
 The perl debugger is a wonderful tool and offers you many options to get to
 where you want to be in your code. However sometimes you want to just cruise
@@ -50,9 +50,9 @@ Note that this only concerns statements directly within the parameters.
 Statements in subs called within ignored statements will still be picked up by
 the debugger, as long as they do not match any of the exclusion parameters.
 
-# METHODS
+=head1 METHODS
 
-## import
+=head2 import
 
     DB::Skip->import(
         pkgs => [ 'My::Mod', qr/^Mine/ ],
@@ -78,7 +78,7 @@ or no regexes are left.
 Repeated calls of this method will remove the last set of parameters and install
 a new one.
 
-## old_db
+=head2 old_db
 
     my $old_db_sub_ref = DB::Skip->old_db;
     DB::Skip->old_db( \&DB::DB );
@@ -94,31 +94,34 @@ import not overwrite the one you set and use your reference instead. If you set
 it after calling import, import will start using your code reference from that
 point on forward.
 
-# SUPPORT
+=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders
 
-## Bugs / Feature Requests
+=head1 SUPPORT
 
-Please report any bugs or feature requests by email to `bug-db-skip at rt.cpan.org`, or through
-the web interface at [http://rt.cpan.org/Public/Dist/Display.html?Name=DB-Skip](http://rt.cpan.org/Public/Dist/Display.html?Name=DB-Skip). You will be automatically notified of any
-progress on the request by the system.
+=head2 Bugs / Feature Requests
 
-## Source Code
+Please report any bugs or feature requests through the issue tracker
+at L<http://rt.cpan.org/Public/Dist/Display.html?Name=DB-Skip>.
+You will be notified automatically of any progress on your issue.
+
+=head2 Source Code
 
 This is open source software.  The code repository is available for
 public review and contribution under the terms of the license.
 
-[https://github.com/wchristian/db-skip](https://github.com/wchristian/db-skip)
+L<https://github.com/wchristian/db-skip>
 
   git clone https://github.com/wchristian/db-skip.git
 
-# AUTHOR
+=head1 AUTHOR
 
 Christian Walde <walde.christian@googlemail.com>
 
-# COPYRIGHT AND LICENSE
+=head1 COPYRIGHT AND LICENSE
 
 This software is Copyright (c) 2011 by Christian Walde.
 
 This is free software, licensed under:
 
   DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE, Version 2, December 2004
+

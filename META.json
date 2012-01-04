@@ -1,0 +1,71 @@
+{
+   "abstract" : "make the perl debugger skip statements in given packages or subs",
+   "author" : [
+      "Christian Walde <walde.christian@googlemail.com>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640",
+   "license" : [
+      "unrestricted"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "DB-Skip",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "xt",
+         "examples",
+         "corpus"
+      ],
+      "package" : [
+         "DB"
+      ]
+   },
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.30"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "perl" : "5.006",
+            "strict" : 0,
+            "warnings" : 0
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Capture::Tiny" : "0.13",
+            "File::Find" : 0,
+            "File::Temp" : 0,
+            "Test::InDistDir" : 0,
+            "Test::More" : 0
+         }
+      }
+   },
+   "provides" : {
+      "DB::Skip" : {
+         "file" : "lib/DB/Skip.pm",
+         "version" : "1.120040"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "mailto" : "bug-db-skip at rt.cpan.org",
+         "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=DB-Skip"
+      },
+      "homepage" : "https://github.com/wchristian/db-skip",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/wchristian/db-skip.git",
+         "web" : "https://github.com/wchristian/db-skip"
+      }
+   },
+   "version" : "1.120040"
+}
+

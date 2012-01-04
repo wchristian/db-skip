@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package DB::Skip;
 
 # ABSTRACT: make the perl debugger skip statements in given packages or subs
@@ -92,9 +95,6 @@ it after calling import, import will start using your code reference from that
 point on forward.
 
 =cut
-
-use strict;
-use warnings;
 
 {
     my $old_db;
