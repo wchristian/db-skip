@@ -132,10 +132,12 @@ sub import {
         return if $sub and $sub_skip{$sub};
 
         for my $pkg_re ( @pkg_regex ) {
+            next if !$pkg_re;
             return if $pkg =~ $pkg_re;
         }
 
         for my $sub_re ( @sub_regex ) {
+            next if !$sub_re;
             return if $sub =~ $sub_re;
         }
 
