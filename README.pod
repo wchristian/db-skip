@@ -4,7 +4,7 @@ DB::Skip - make the perl debugger skip statements in given packages or subs
 
 =head1 VERSION
 
-version 1.120040
+version 1.121090
 
 =head1 SYNOPSIS
 
@@ -94,7 +94,7 @@ import not overwrite the one you set and use your reference instead. If you set
 it after calling import, import will start using your code reference from that
 point on forward.
 
-=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders
+=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 
 =head1 SUPPORT
 
@@ -119,9 +119,12 @@ Christian Walde <walde.christian@googlemail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Christian Walde.
 
-This is free software, licensed under:
+Christian Walde has dedicated the work to the Commons by waiving all of his
+or her rights to the work worldwide under copyright law and all related or
+neighboring legal rights he or she had in the work, to the extent allowable by
+law.
 
-  DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE, Version 2, December 2004
+Works under CC0 do not require attribution. When citing the work, you should
+not imply endorsement by the author.
 

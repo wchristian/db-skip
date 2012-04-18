@@ -2,6 +2,10 @@ Revision history for Perl extension {{$dist->name}}
 
 {{$NEXT}}
 
+1.121090  2012-04-18 17:44:20 Europe/Berlin
+    - added protection against some warnings caused by being run during the END
+      phase
+
 1.113370  2011-12-03 09:30:45 Europe/Berlin
     - set minimum test dep of C::T to 0.13 to allow capturing of system return
       value
