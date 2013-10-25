@@ -9,7 +9,7 @@ use Test::More;
 
 my @includes = map { "-I$_" } @INC;
 my ( $out, $err, $res ) = capture {
-    system( $^X, @includes, "-It/lib", "-d:Caller", "t/bin/example.pl" );
+    system( $^X, @includes, "-It/lib", "-d:DBSkipCaller", "t/bin/example.pl" );
 };
 
 unlike $out, qr/main::skip/, "main::skip is skipped";
